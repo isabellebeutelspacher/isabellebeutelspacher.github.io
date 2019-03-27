@@ -4,7 +4,6 @@ const div = document.getElementById("map");
 const breite1= div.getAttribute("data-lat1");
 const laenge1 = div.getAttribute("data-lng1");
 const titel1 = div.getAttribute("data-title1");
-const div = document.getElementById("map");
 const breite2= div.getAttribute("data-lat2");
 const laenge2 = div.getAttribute("data-lng2");
 const titel2 = div.getAttribute("data-title2");
@@ -21,7 +20,7 @@ let karte = L.map("map");
 // auf Ausschnitt zoomen, Zoomlevel 13
 karte.setView(
     [breite1,laenge1], 
-    13
+    12
 );
 
 //openstreetmap einbauen miz z=Zoom, x=Länge und y=Breite, s=server
@@ -36,4 +35,5 @@ let pin2 = L.marker(
 ).addTo(karte);
 
 //Popup zum Pin hängen
+pin1.bindPopup(titel1).openPopup();
 pin2.bindPopup(titel2).openPopup();

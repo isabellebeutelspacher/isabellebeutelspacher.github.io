@@ -1,5 +1,5 @@
 body {
-    max-width: 1280px;
+    max-width: 1200px;
     margin: auto;
     font-family: "Open Sans";
 }
@@ -43,7 +43,7 @@ main figcaption {
     float: left;
     margin-left: -12em;
     width: 11.5em;
-    color: red;
+    color: rgb(112, 24, 24);
 }
 main figure img {
     width: 90%;
