@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Adlerweg-Etappe 06: Matrei in Osttirol - Sudetendeutsche Hütte</title><!-- TODO:Titel der Etappe -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Margarine|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script defer src="main.js"></script>
+</head>
+
+<body>
+    <header>
+        <h3>Adlerweg</h3>
+        <h4>Der Tiroler Weitwanderweg</h4>
+        <h2>Etappe 06: Matrei in Osttirol - Sudetendeutsche Hütte</h2>
+        <!-- TODO: eine Überschrift 2 mit dem Titel der Etappe -->
+    </header>
+
+    <div class="author">
+        <img src="images/Schmetterling_1_db.jpg" alt="Schmetterling" height="100" width="100">
+        <address>
+            <a href="mailto:isabelle.beutelspacher@student.uibk.ac.at">Isabelle Beutelspacher</a>
+            <a href="https://github.com/isabellebeutelspacher/isabellebeutelspacher.github.io/">isabellebeutelspacher.github.io</a>
+    </address>
+        
+    </div>
+    <!-- TODO: ein div-Element mit der Klasse "author" -->
+    <!-- TODO: ein User-(Symbol)Bild mit 100x100 Pixel im Format JPG mit dem Namen user.jpg in einem Unterordner images/ -->
+    <!-- TODO: ein address-Element mit zwei Links -->
+    <!-- TODO: ein Link auf die eigene E-Mailadresse mit dem eigenen Namen-->
+    <!-- TODO: ein Link auf den eigenen github.com Account -->
+
+    <hr />
+
+    <main>
+        <h1>Wellington - die schöne Hauptstadt</h1>
+        <p>Wellington, offizielle Bezeichnung: Wellington City (Māori Te Whanganui-a-Tara, wobei damit der Wellington
+            Harbour und seine Umgebung gemeint ist), ist die Hauptstadt von Neuseeland und stellt zusammen mit den
+            angrenzenden Städten Lower Hutt, Upper Hutt und Porirua nach Auckland den zweitgrößten Ballungsraum des
+            Landes dar. Die Stadt Wellington selbst hat rund 190.000 Einwohner. </p>
+        Quelle: <a href="https://de.wikipedia.org/wiki/Wellington">Wikipedia</a>
+        <!-- TODO: eine Überschrift 1 mit dem Titel der Etappe und einem kurzen "Teaser" -->
+        <!-- TODO: ein Absatz mit einem Einführungstext zur Etappe aus der Wikipedia plus einem Link auf die Wikipedia-Seite in der Form "(Quelle: Wikipedia)", das Wort "Wikipedia" als Link -->
+        <h2>Cable Car</h2>
+    <figure>
+        <figcaption><i class="fas fa-camera"></i><em>Cable Car in Wellington</em></figcaption>
+        <img src="images/attraction.jpg" alt="Cable Car in Wellington">
+    </figure>
+        <p>
+            Wellington Cable Car ist eine meterspurige Standseilbahn in Wellington, der Hauptstadt von Neuseeland. Die
+            610 Meter lange Strecke verbindet den rund 120 Meter höher gelegenen Stadtteil Kelburn mit der
+            Hauptgeschäftsstraße der Stadt, Lambton Quay. Das Cable Car System ist eines der bekanntesten Wahrzeichen
+            der Stadt.
+        </p>
+        Quelle: <a href="https://de.wikipedia.org/wiki/Wellington_Cable_Car">Wikipedia</a><br>
+
+        <!-- TODO: eine Überschrift 2 einer Sehenswürdigkeit der Etappe-->
+        <!-- TODO: eine vollständige Abbildung mit Bild im JPG-Format und kursiver Bildüberschrift für diese Sehenswürdigkeit. Das Bild soll attraction.jpg heißen, maximal 900 Pixel breit oder hoch sein und im Ordner images/ liegen. Das Bild soll von https://commons.wikimedia.org/ oder https://pixabay.com/ stammen und eine Public Domain, oder CC BY-SA Lizenz besitzen. -->
+        <!-- TODO: ein Absatz mit der Beschreibung der Sehenswürdigkeit aus der Wikipedia plus einem Link auf die Wikipedia-Seite in der Form "(Quelle: Wikipedia)", das Wort "Wikipedia" als Link -->
+
+        <h3>Übersichtskarte</h3>
+        <div id="map" data-lng="174.47" data-lat="-41.17" data-title="Cable Car"></div>
+
+        <!-- TODO: ein div-Element mit dem id-Attribut "map" und drei weiteren Attributen data-lat, data-lng und data-title. Die Koordinaten von data-lat und data-lng sind als Dezimalgrad mit einem "." als Komma zu schreiben und aus der Wikipedia zu entnehmen. Das data-title Attribut enthält einen Titel für die oben verwendete Sehenswürdigkeit
+        -->
+
+        <h3>Links</h3>
+        <ul>
+            <li><a href="https://www.wellingtoncablecar.co.nz/German/Home.html">https://www.wellingtoncablecar.co.nz/German/Home.html</a></li>
+            <li><a href="https://www.wellingtoncablecar.co.nz/German/TimetableFares.html">https://www.wellingtoncablecar.co.nz/German/TimetableFares.html</a></li>
+            <li><a href="https://www.newzealand.com/de/plan/business/wellington-cable-car/">https://www.newzealand.com/de/plan/business/wellington-cable-car/</a></li>
+            <li><a href="https://www.expedia.at/Wellington-Cable-Car-Wellington.d6158683.POI">https://www.expedia.at/Wellington-Cable-Car-Wellington.d6158683.POI</a></li>
+        </ul>
+        <!-- TODO: 4 Links zu Seiten im Netz die zur Etappe/Sehenswürdigkeit passen als ungeordnete Liste -->
+
+    </main>
+
+    <hr />
+
+    <footer>
+        <nav>
+            
+            <a class="back" href="https://hofmjani.github.io/nz/index.html"><i class="fas fa-arrow-left"></i>vorhergehender Stop</a>
+            <a class="next" href="https://ibk94.github.io/nz/index.html">nächster Stop<i class="fas fa-arrow-right"></i></a>
+            
+        </nav>
+        <!-- TODO: ein nav-Element mit zwei Links auf die vorherige Etappe und die nächste Etappe mit den Klassen "back" und "next" sowie den Link-Texten "vorhergehender Stop" und "nächster Stop". Die Links verweisen auf die entsprechenden Etappen in der Form https://username.github.io/nz/index.html -->
+    </footer>
+
+</body>
+
+</html>
