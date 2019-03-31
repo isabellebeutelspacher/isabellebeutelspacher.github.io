@@ -15,7 +15,7 @@ const titel2 = div.getAttribute("data-title2");
 
 // Karte initialisieren
 let karte = L.map("map");
-// console.log(Karte);
+// console.log(Karte);//
 
 // auf Ausschnitt zoomen, Zoomlevel 13
 /*karte.setView(
@@ -107,5 +107,5 @@ for (let blick of ADLERBLICKE) {
         <em>Kunde: ${blick.kunde}</em>`
     )
 }
-console.log(blickeGruppe.getBounds()); //zeig nur in Konsole an
+// console.log(blickeGruppe.getBounds()); //zeig nur in Konsole an
 karte.fitBounds(blickeGruppe.getBounds()); //Auf alle Marker zommen
