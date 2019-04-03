@@ -172,5 +172,21 @@ for (let blick of ADLERBLICKE) {
         <em>Kunde: ${blick.kunde}</em>`
     )
 }
+let ausschnitt = blickeGruppe.getBounds();
+console.log(pin1);
+ausschnitt.extend(pin1.getLatLng());
+ausschnitt.extend(pin2.getLatLng());
+
 // console.log(blickeGruppe.getBounds()); //zeig nur in Konsole an
-karte.fitBounds(blickeGruppe.getBounds()); //Auf alle Marker zommen
+karte.fitBounds(ausschnitt); //Auf alle Marker zommen
+
+//Vollbildmodus, link und script in index.html einfügen
+karte.addControl(new L.Control.Fullscreen());
+//Kartenausschnitt in Link vermerkt, script in index.html einfügen
+var hash = new L.Hash(karte);
+//Koordinaten auf der Karte per Mausklick anzeigen lassen
+var coords = new L.Control.Coordinates();
+coords.addTo(karte);
+karte.on('click', function(e) {
+	coords.setCoordinates(e);
+});
