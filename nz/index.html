@@ -8,9 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
     <link href="https://fonts.googleapis.com/css?family=Margarine|Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
+        rel='stylesheet' />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/leaflet-hash/0.2.1/leaflet-hash.js'></script>
+    <link href="plugins/Control.Coordinates.css" rel="stylesheet">
+    <script src="plugins/Control.Coordinates.js"></script>
     <script defer src="main.js"></script>
 </head>
 
@@ -26,9 +35,10 @@
         <img src="images/Wellinton.jpg" alt="Skyline Wellington bei Nacht" height="100" width="150">
         <address>
             <a href="mailto:isabelle.beutelspacher@student.uibk.ac.at">Isabelle Beutelspacher</a>
-            <a href="https://github.com/isabellebeutelspacher/isabellebeutelspacher.github.io/">isabellebeutelspacher.github.io</a>
-    </address>
-        
+            <a
+                href="https://github.com/isabellebeutelspacher/isabellebeutelspacher.github.io/">isabellebeutelspacher.github.io</a>
+        </address>
+
     </div>
     <!-- TODO: ein div-Element mit der Klasse "author" -->
     <!-- TODO: ein User-(Symbol)Bild mit 100x100 Pixel im Format JPG mit dem Namen user.jpg in einem Unterordner images/ -->
@@ -48,10 +58,10 @@
         <!-- TODO: eine Überschrift 1 mit dem Titel der Etappe und einem kurzen "Teaser" -->
         <!-- TODO: ein Absatz mit einem Einführungstext zur Etappe aus der Wikipedia plus einem Link auf die Wikipedia-Seite in der Form "(Quelle: Wikipedia)", das Wort "Wikipedia" als Link -->
         <h2>Cable Car</h2>
-    <figure>
-        <figcaption><i class="fas fa-camera"></i><em>Cable Car in Wellington</em></figcaption>
-        <img src="images/attraction.jpg" alt="Cable Car in Wellington">
-    </figure>
+        <figure>
+            <figcaption><i class="fas fa-camera"></i><em>Cable Car in Wellington</em></figcaption>
+            <img src="images/attraction.jpg" alt="Cable Car in Wellington">
+        </figure>
         <p>
             Wellington Cable Car ist eine meterspurige Standseilbahn in Wellington, der Hauptstadt von Neuseeland. Die
             610 Meter lange Strecke verbindet den rund 120 Meter höher gelegenen Stadtteil Kelburn mit der
@@ -72,10 +82,18 @@
 
         <h3>Links</h3>
         <ul>
-            <li><a href="https://www.wellingtoncablecar.co.nz/German/Home.html">https://www.wellingtoncablecar.co.nz/German/Home.html</a></li>
-            <li><a href="https://www.wellingtoncablecar.co.nz/German/TimetableFares.html">https://www.wellingtoncablecar.co.nz/German/TimetableFares.html</a></li>
-            <li><a href="https://www.newzealand.com/de/plan/business/wellington-cable-car/">https://www.newzealand.com/de/plan/business/wellington-cable-car/</a></li>
-            <li><a href="https://www.expedia.at/Wellington-Cable-Car-Wellington.d6158683.POI">https://www.expedia.at/Wellington-Cable-Car-Wellington.d6158683.POI</a></li>
+            <li><a
+                    href="https://www.wellingtoncablecar.co.nz/German/Home.html">https://www.wellingtoncablecar.co.nz/German/Home.html</a>
+            </li>
+            <li><a
+                    href="https://www.wellingtoncablecar.co.nz/German/TimetableFares.html">https://www.wellingtoncablecar.co.nz/German/TimetableFares.html</a>
+            </li>
+            <li><a
+                    href="https://www.newzealand.com/de/plan/business/wellington-cable-car/">https://www.newzealand.com/de/plan/business/wellington-cable-car/</a>
+            </li>
+            <li><a
+                    href="https://www.expedia.at/Wellington-Cable-Car-Wellington.d6158683.POI">https://www.expedia.at/Wellington-Cable-Car-Wellington.d6158683.POI</a>
+            </li>
         </ul>
         <!-- TODO: 4 Links zu Seiten im Netz die zur Etappe/Sehenswürdigkeit passen als ungeordnete Liste -->
 
@@ -85,10 +103,12 @@
 
     <footer>
         <nav>
-            
-            <a class="back" href="https://hofmjani.github.io/nz/index.html"><i class="fas fa-arrow-left"></i>vorhergehender Stop</a>
-            <a class="next" href="https://ibk94.github.io/nz/index.html">nächster Stop<i class="fas fa-arrow-right"></i></a>
-            
+
+            <a class="back" href="https://hofmjani.github.io/nz/index.html"><i
+                    class="fas fa-arrow-left"></i>vorhergehender Stop</a>
+            <a class="next" href="https://ibk94.github.io/nz/index.html">nächster Stop<i
+                    class="fas fa-arrow-right"></i></a>
+
         </nav>
         <!-- TODO: ein nav-Element mit zwei Links auf die vorherige Etappe und die nächste Etappe mit den Klassen "back" und "next" sowie den Link-Texten "vorhergehender Stop" und "nächster Stop". Die Links verweisen auf die entsprechenden Etappen in der Form https://username.github.io/nz/index.html -->
     </footer>
