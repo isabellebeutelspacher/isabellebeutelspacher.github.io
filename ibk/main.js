@@ -74,7 +74,7 @@ L.control.layers({
 
 karte.setView(
     [47.267222, 11.392778], 13
-    );
+);
 
 /*karte.locate({
     setView: true,
@@ -97,3 +97,13 @@ karte.on("locationerror", function (event) {
 });*/
 
 console.log(SPORTSTAETTEN);
+
+for (let staette of SPORTSTAETTEN) {
+    let staettepin = L.marker([staette.lat, staette.lng]).addTo(karte)
+    staettepin.bindPopup(
+        `<h1>Name: ${staette.name}</h1>
+        <p>Adresse: ${staette.adresse}</p>
+        <p>Typ: ${staette.typ}</p>
+        <p>Gruppe: ${staette.gruppe}</p>`
+    )
+}
