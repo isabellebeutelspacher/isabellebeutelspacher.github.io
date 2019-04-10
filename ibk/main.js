@@ -70,17 +70,24 @@ L.control.layers({
     "Stamen Watercolor": kartenLayer.stamen_watercolor
 }).addTo(karte);
 
+let positionsMarker = L.marker([47, 11]).addTo(karte);
+
 karte.locate({
     setView: true,
     maxZoom: 16,
+    watch: true,
 });
 
 karte.on("locationfound", function (event) {
     console.log(event);
-    L.marker([
-        event.latitude, event.longitude
-    ]).addTo(karte);
-    L.circle([event.latitude, event.longitude], {
-        radius: event.accuracy/2
+    //L.marker(event.latlng
+    //    ).addTo(karte);
+    positionsMarker.setLatLng(event.latlng);
+    L.circle(event.latlng, {
+        radius: event.accuracy / 2
     }).addTo(karte);
 })
+
+karte.on("locationerror", function (event) {
+    alert("Leider keinen Standort gefunden")
+});
