@@ -101,7 +101,7 @@ console.log(SPORTSTAETTEN);
 for (let staette of SPORTSTAETTEN) {
     let staettepin = L.marker([staette.lat, staette.lng]).addTo(karte)
     staettepin.bindPopup(
-        `<h1>Name: ${staette.name}</h1>
+        `<h1>${staette.name}</h1>
         <p>Adresse: ${staette.adresse}</p>
         <p>Typ: ${staette.typ}</p>
         <p>Gruppe: ${staette.gruppe}</p>`
