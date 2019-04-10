@@ -70,9 +70,13 @@ L.control.layers({
     "Stamen Watercolor": kartenLayer.stamen_watercolor
 }).addTo(karte);
 
-let positionsMarker = L.marker([47, 11]).addTo(karte);
+//let positionsMarker = L.marker([47, 11]).addTo(karte);
 
-karte.locate({
+karte.setView(
+    [47.267222, 11.392778], 13
+    );
+
+/*karte.locate({
     setView: true,
     maxZoom: 16,
     watch: true,
@@ -90,4 +94,6 @@ karte.on("locationfound", function (event) {
 
 karte.on("locationerror", function (event) {
     alert("Leider keinen Standort gefunden")
-});
+});*/
+
+console.log(SPORTSTAETTEN);
