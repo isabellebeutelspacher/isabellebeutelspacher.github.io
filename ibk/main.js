@@ -99,11 +99,18 @@ karte.on("locationerror", function (event) {
 console.log(SPORTSTAETTEN);
 
 for (let staette of SPORTSTAETTEN) {
-    let staettepin = L.marker([staette.lat, staette.lng]).addTo(karte)
+    //Piktogramm def
+    let piktogramm = L.icon({
+        iconUrl: `icons/icon_${staette.icon}_schwarz_auf_weiss_250px.png`,
+        iconSize: [20,20],
+    });
+    let staettepin = L.marker([staette.lat, staette.lng], {
+        icon: piktogramm
+    }).addTo(karte)
     staettepin.bindPopup(
         `<h1>${staette.name}</h1>
         <p>Adresse: ${staette.adresse}</p>
         <p>Typ: ${staette.typ}</p>
         <p>Gruppe: ${staette.gruppe}</p>`
-    )
+    );
 }
