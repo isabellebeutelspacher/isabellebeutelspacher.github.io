@@ -85,9 +85,9 @@ async function loadStations() {
     const awsTirol = L.featureGroup();
     L.geoJson(stations)
         .bindPopup(function (layer) {
-        const date=new Date(layer.feature.properties.date);
-        console.log("Datum:", date);
-        return `<h4>${layer.feature.properties.name}</h4>
+            const date = new Date(layer.feature.properties.date);
+            console.log("Datum:", date);
+            return `<h4>${layer.feature.properties.name}</h4>
         Höhe: ${layer.feature.geometry.coordinates[2]} m<br>
         Temperatur: ${layer.feature.properties.LT} °C <br>
         Datum: ${date.toLocaleDateString("de-At")}
@@ -104,22 +104,58 @@ async function loadStations() {
     //Windrichtung anzeigen
     const windLayer = L.featureGroup();
     L.geoJson(stations, {
-        pointToLayer: function(feature, latlng) {
+        pointToLayer: function (feature, latlng) {
             if (feature.properties.WR) {
                 let color = 'black';
                 if (feature.properties.WG > 20) {
-                    color= 'red';
+                    color = 'red';
                 }
-            return L.marker(
-                latlng,{
-                    icon: L.divIcon({
-                        html: `<i style="color: ${color}; transform: rotate(${feature.properties.WG}deg)" class= "fas fa-arrow-circle-up fa-2x"></i>`
-                    })
-                });
+                return L.marker(
+                    latlng, {
+                        icon: L.divIcon({
+                            html: `<i style="color: ${color}; transform: rotate(${feature.properties.WG}deg)" class= "fas fa-arrow-circle-up fa-2x"></i>`
+                        })
+                    });
             }
         }
     }).addTo(windLayer);
     layerControl.addOverlay(windLayer, "Windrichtung");
     windLayer.addTo(karte);
+
+//Temperaturlayer hinzufügen
+    const temperaturLayer = L.featureGroup();
+    const farbPalette=[
+        [0, "blue"],
+        [2, "red"],
+    ];
+    L.geoJson(stations, {
+        pointToLayer: function (feature, latlng) {
+            if (feature.properties.LT) {
+                let color = 'red';
+                for(let i=0; i<farbPalette.length; i++) {
+                console.log(farbPalette[i], feature.properties.LT);
+                if (feature.properties.LT<farbPalette[i][0]) {
+                    color=farbPalette[i][1];
+                    break;
+                }
+                }
+               // let color = 'blue';
+                //if (feature.properties.LT > 0) {
+                //    color = 'red';
+               // }
+                return L.marker(
+                    latlng, {
+                        icon: L.divIcon({
+                            html: `<div class="temperaturLabel" style="background-color:${color}">${feature.properties.LT}</div>`
+                        })
+                    });
+            }
+        }
+    }).addTo(temperaturLayer);
+    layerControl.addOverlay(temperaturLayer, "Temperatur");
+    temperaturLayer.addTo(karte);
 }
 loadStations();
+
+
+//<div id="symbology" style="display: block; background-image: url(&quot;https://st.wetteronline.de/mdr/p_aktuell_local/1.0.145/images/symbology/www/ic_Temperature_562x76.svg&quot;);"></div>
