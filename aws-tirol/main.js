@@ -56,7 +56,7 @@ const kartenLayer = {
 
 kartenLayer.geolandbasemap.addTo(karte);
 
-L.control.layers({
+const layerControl = L.control.layers({
     "Geoland Basemap": kartenLayer.geolandbasemap,
     "Geoland Basemap Grau": kartenLayer.bmapgrau,
     "OpenStreetMap": kartenLayer.osm,
@@ -77,15 +77,49 @@ karte.setView(
 );
 
 //console.log(AWS);
-L.geoJson(AWS).addTo(karte)
+//L.geoJson(AWS).addTo(karte)
 
-const awsTirol=L.featureGroup();
-L.geoJson(AWS)
-.bindPopup(function(layer) {
-    console.log("Layer:", layer);
-    return `Temperatur: ${layer.feature.properties.L} °C <br>
-    Datum: ${layer.feature.properties.date}`;
-})
-.addTo(awsTirol)
-awsTirol.Tirol.addTo(karte)
-karte.fitBounds(awsTirol.getBounds());
+async function loadStations() {
+    const response = await fetch("https://aws.openweb.cc/stations");
+    const stations = await response.json();
+    const awsTirol = L.featureGroup();
+    L.geoJson(stations)
+        .bindPopup(function (layer) {
+        const date=new Date(layer.feature.properties.date);
+        console.log("Datum:", date);
+        return `<h4>${layer.feature.properties.name}</h4>
+        Höhe: ${layer.feature.geometry.coordinates[2]} m<br>
+        Temperatur: ${layer.feature.properties.LT} °C <br>
+        Datum: ${date.toLocaleDateString("de-At")}
+        ${date.toLocaleTimeString("de-At")} <br>
+        Windgeschwindigkeit: ${layer.feature.properties.WG ? layer.feature.properties.WG +'km/h':'Keine Daten'} 
+        <hr>
+        <footer>Quelle: Land Tirol - <a href="https://data-tirol.gv.at">data.tirol.gv.at</a></footer></hr>
+        `;
+        })
+        .addTo(awsTirol)
+    //awsTirol.addTo(karte)
+    karte.fitBounds(awsTirol.getBounds());
+    layerControl.addOverlay(awsTirol, "Wetterstationen Tirol");
+    //Windrichtung anzeigen
+    const windLayer = L.featureGroup();
+    L.geoJson(stations, {
+        pointToLayer: function(feature, latlng) {
+            if (feature.properties.WR) {
+                let color = 'black';
+                if (feature.properties.WG > 20) {
+                    color= 'red';
+                }
+            return L.marker(
+                latlng,{
+                    icon: L.divIcon({
+                        html: `<i style="color: ${color}; transform: rotate(${feature.properties.WG}deg)" class= "fas fa-arrow-circle-up fa-2x"></i>`
+                    })
+                });
+            }
+        }
+    }).addTo(windLayer);
+    layerControl.addOverlay(windLayer, "Windrichtung");
+    windLayer.addTo(karte);
+}
+loadStations();
