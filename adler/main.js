@@ -74,7 +74,7 @@ const kartenLayer = {
 
 
 //kartenLayer.osm.addTo(karte);
-kartenLayer.geolandbasemap.addTo(karte);
+//kartenLayer.geolandbasemap.addTo(karte);
 
 //Auswahlmenü hinzufügen
 L.control.layers({
