@@ -125,9 +125,11 @@ async function loadStations() {
 //Temperaturlayer hinzufügen
     const temperaturLayer = L.featureGroup();
     const farbPalette=[
-        [0, "blue"],
-        [1, "orange"],
-        [2, "red"],
+        [-10, "#0022c9"],//-20 bis -10
+        [0, "#194bff"], //-10 bis 0
+        [5, "#5d567c"], //0 bis 5
+        [10, "#f00a0a"], //10 bis 20
+        [99, "#b20000"], //20 bis 30
     ];
     L.geoJson(stations, {
         pointToLayer: function (feature, latlng) {
