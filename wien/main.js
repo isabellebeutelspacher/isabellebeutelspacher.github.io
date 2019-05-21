@@ -172,8 +172,6 @@ function makewifi(feature, latlng) {
 }
 
 
-
-
 async function loadwifi(wifi) {
     const wificlusterGruppe = L.markerClusterGroup();
     const wifiresponse = await fetch(wifi);
