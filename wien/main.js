@@ -70,6 +70,7 @@ karte.addControl(new L.Control.Fullscreen());
 
 //Wikipediaartikel laden
 //http://api.geonames.org/wikipediaBoundingBoxJSON?formatted=true&north=44.1&south=-9.9&east=-22.4&west=55.2&username=webmapping&style=full
+//http://api.geonames.org/wikipediaBoundingBoxJSON?formatted=true&north=44.1&south=-9.9&east=-22.4&west=55.2&username=demo&style=full
 
 const wikipediaGruppe = L.featureGroup().addTo(karte);
 layerControl.addOverlay(wikipediaGruppe, "Wikipedia Artikel");
@@ -115,7 +116,7 @@ karte.on("load zommend moveend", function () { //beim Laden, Ausschnitt verschie
         w: karte.getBounds().getWest(),
     }
     console.log(ausschnitt)
-    const geonamesUrl = `http://api.geonames.org/wikipediaBoundingBoxJSON?formatted=true&north=${ausschnitt.n}&south=${ausschnitt.s}&east=${ausschnitt.o}&west=${ausschnitt.w}&username=webmapping&style=full&maxRows=50&lang=de`;
+    const geonamesUrl = `http://api.geonames.org/wikipediaBoundingBoxJSON?formatted=true&north=${ausschnitt.n}&south=${ausschnitt.s}&east=${ausschnitt.o}&west=${ausschnitt.w}&username=IsiB&style=full&maxRows=50&lang=de`;
     console.log(geonamesUrl);
     if (geonamesUrl!= letzteGeonamesUrl){
     //Json-Artikel laden und nur laden wenn anders als vorherige
