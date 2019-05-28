@@ -201,6 +201,17 @@ new L.GPX("gpx/AdlerwegEtappeO6.gpx", {
     }
 }).on('loaded', function (e) {
     karte.fitBounds(e.target.getBounds());
+    //const statsDiv = document.getElementById("stats"); //Konstante zur Statistik von index ID
+    //const minHeight=Math.round(e.target.get_elevation_min());
+    //const maxHeight=Math.round(e.target.get_elevation_max());
+    //const verticalMeters=Math.round(e.target.get_elevation_gain());
+    const minSpan=Math.round(document.getElementById('min'));
+    const maxSpan=Math.round(document.getElementById('max'));
+    const diffSpan=Math.round(document.getElementById('diff'));
+    minSpan.innerHTML=e.target.get_elevation_min();
+    maxSpan.innerHTML=e.target.get_elevation_max();
+    diffSpan.innerHTML=e.target.get_elevation_gain();
+   //statsDiv.innerHTML= `Routen Statistik: niedrigster Punkt ${minHeight}m, höchster Punkt: ${maxHeight}m, Höhenunterschied ${verticalMeters}m` 
 }).on('addline', function (e) {
     console.log('linie geladen');
     const controlElevation = L.control.elevation({
